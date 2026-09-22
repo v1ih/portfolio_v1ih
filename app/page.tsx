@@ -1,69 +1,94 @@
-"use client";
+import { ArrowDownRight, ArrowUpRight, Code2, Mail, ShoppingBag, Workflow } from "lucide-react";
+import type { ReactNode } from "react";
 
-import { useState } from "react";
-import { ArrowRight, Bot, Braces, ExternalLink, Mail, ShoppingBag, Sparkles, Store, Workflow } from "lucide-react";
+const external = { target: "_blank", rel: "noreferrer" } as const;
 
-const filters = ["Todos", "Sites", "E-commerce", "Automação"] as const;
-type Filter = (typeof filters)[number];
+function ProjectHeader({ number, label, title }: { number: string; label: string; title: string }) {
+  return <div className="project-heading"><span className="project-number">{number}</span><div><p className="overline">{label}</p><h3>{title}</h3></div></div>;
+}
 
-const projects = [
-  { title: "Mary Bless", category: "E-commerce" as Filter, eyebrow: "Nuvemshop · moda e varejo", description: "Organização da loja, do catálogo e das variações, além da criação de banners e preparação dos canais de venda.", tags: ["Nuvemshop", "Catálogo", "Marketing"], art: "mary" },
-  { title: "Assistente de Compras IA", category: "Automação" as Filter, eyebrow: "WhatsApp · automação de compras", description: "Assistente que entende texto e áudio, consulta o histórico de preços e ajuda o comprador a conduzir novas cotações.", tags: ["IA", "WhatsApp", "n8n"], art: "automation" },
-  { title: "Nexo Automações", category: "Sites" as Filter, eyebrow: "Marca e presença digital", description: "Site institucional criado para apresentar serviços de automação e facilitar o primeiro contato com empresas.", tags: ["Landing page", "Responsivo", "Conversão"], art: "nexo" },
-  { title: "Aroma Beans Chatbot", category: "Automação" as Filter, eyebrow: "Atendimento para cafeteria", description: "Chatbot preparado para responder dúvidas sobre cardápio, horários, métodos de preparo e informações da cafeteria.", tags: ["React", "Gemini AI", "Chatbot"], art: "chatbot", url: "https://ai-chatbot-lavinia.vercel.app/" },
-  { title: "Revolve Global", category: "Sites" as Filter, eyebrow: "Site e loja de tecnologia", description: "Uma experiência digital completa, com apresentação do produto, loja, suporte, contato e newsletter.", tags: ["UX/UI", "E-commerce", "Responsivo"], art: "revolve", url: "https://revolve-global.contato-nexoautomaco.chatgpt.site" },
-  { title: "Aplicativo de Clima", category: "Sites" as Filter, eyebrow: "Consulta meteorológica", description: "Aplicação responsiva para consultar as condições do tempo em diferentes cidades usando dados atualizados.", tags: ["API", "Front-end", "Responsivo"], art: "weather", url: "https://v1ih.github.io/weather-app/" },
-];
-
-function ProjectVisual({ art, title }: { art: string; title: string }) {
-  if (art === "automation") return <img src="/automacao-compras.png" alt="Demonstração anonimizada do assistente de compras com IA" className="project-img project-img-phone" />;
-  if (art === "chatbot") return <img src="https://portfolio-v1ih.vercel.app/assets/chatbot-f27d720f.png" alt={title} className="project-img" />;
-  if (art === "weather") return <img src="https://portfolio-v1ih.vercel.app/assets/weather-99187036.png" alt={title} className="project-img" />;
-  if (art === "mary") return <div className="project-art mary-art"><span className="mary-mark">MB</span><p>Loja virtual, catálogo<br />e presença digital</p></div>;
-  if (art === "nexo") return <div className="project-art nexo-art"><span>NEXO</span><div className="nexo-line" /><p>Automações que conectam negócios e pessoas.</p></div>;
-  return <div className="project-art revolve-art"><span>REVOLVE</span><div className="orbit"><i /><i /><i /></div><p>Organize o hoje. Abra espaço para o próximo.</p></div>;
+function ExternalButton({ href, children, subtle = false }: { href: string; children: ReactNode; subtle?: boolean }) {
+  return <a className={`project-link ${subtle ? "subtle" : ""}`} href={href} {...external}>{children} <ArrowUpRight size={16} /></a>;
 }
 
 export default function Home() {
-  const [active, setActive] = useState<Filter>("Todos");
-  const visible = active === "Todos" ? projects : projects.filter((project) => project.category === active);
-  return (
-    <main>
-      <header className="topbar">
-        <a className="brand" href="#inicio" aria-label="Início"><span>LF</span> Lavínia Ferraz</a>
-        <nav aria-label="Navegação principal"><a href="#servicos">Serviços</a><a href="#projetos">Projetos</a><a href="#sobre">Sobre</a><a className="nav-cta" href="https://wa.me/5524992643632" target="_blank" rel="noreferrer">Vamos conversar</a></nav>
-      </header>
-      <section id="inicio" className="hero shell">
-        <div className="hero-copy">
-          <p className="kicker"><span /> DISPONÍVEL PARA NOVOS PROJETOS</p>
-          <h1>Sites que apresentam.<br /><em>Lojas que vendem.</em><br />Automações que trabalham.</h1>
-          <p className="hero-text">Desenvolvo experiências digitais completas para pequenas empresas: do site e e-commerce à automação com inteligência artificial.</p>
-          <div className="hero-actions"><a className="button primary" href="#projetos">Ver trabalhos <ArrowRight size={18} /></a><a className="button secondary" href="https://wa.me/5524992643632" target="_blank" rel="noreferrer">Solicitar orçamento</a></div>
+  return <main>
+    <header className="site-header">
+      <a className="identity" href="#top" aria-label="Ir para o início"><span>LF</span><div><strong>Lavínia Ferraz</strong><small>Desenvolvimento &amp; produto digital</small></div></a>
+      <nav aria-label="Navegação principal"><a href="#trabalhos">Trabalhos</a><a href="#atuacao">Atuação</a><a href="#sobre">Sobre</a><a className="header-contact" href="mailto:contato.nexoautomacoes@gmail.com">Contato <ArrowUpRight size={14} /></a></nav>
+    </header>
+
+    <section className="hero" id="top">
+      <div className="hero-index"><span>PORTFÓLIO</span><span>2026</span></div>
+      <h1>Desenvolvo produtos digitais que <em>organizam negócios.</em></h1>
+      <div className="hero-bottom"><p>Sites, e-commerce e automações construídos com atenção ao funcionamento, à experiência de quem usa e à rotina de quem opera.</p><a href="#trabalhos">Ver projetos <ArrowDownRight size={18} /></a></div>
+    </section>
+
+    <section className="manifesto"><p>Da interface ao fluxo de trabalho.</p><p>Eu conecto desenvolvimento, organização e comunicação para transformar uma necessidade em uma entrega que funciona.</p></section>
+
+    <section className="work" id="trabalhos">
+      <div className="section-intro"><p className="overline">TRABALHOS SELECIONADOS</p><h2>Projetos com contexto,<br />decisão e entrega.</h2></div>
+
+      <article className="case case-pethelp">
+        <div className="case-copy">
+          <ProjectHeader number="01" label="PRODUTO DIGITAL · TCC" title="PetHelp" />
+          <p className="case-lead">Plataforma para aproximar responsáveis, clínicas e profissionais veterinários em torno do histórico de saúde do animal.</p>
+          <div className="case-columns"><div><span>Desafio</span><p>Substituir registros dispersos por uma experiência única para consultas, vacinas, exames e acompanhamento.</p></div><div><span>Participação</span><p>Pesquisa, definição da experiência, desenvolvimento da interface, testes e comunicação de lançamento.</p></div></div>
+          <div className="stack"><span>React</span><span>TypeScript</span><span>UX/UI</span><span>Pesquisa</span></div>
+          <div className="link-row"><ExternalButton href="https://pethelp-web-six.vercel.app/">Acessar sistema</ExternalButton><ExternalButton href="https://github.com/v1ih/pethelp" subtle><Code2 size={15}/> Ver código</ExternalButton></div>
         </div>
-        <div className="hero-stage" aria-label="Resumo das áreas de atuação">
-          <div className="stage-glow" /><div className="stage-card stage-main"><div className="window-bar"><i /><i /><i /><span>lavinia.digital</span></div><div className="window-content"><p>PROJETO EM FOCO</p><strong>Soluções digitais<br />do início ao resultado.</strong><div className="mini-grid"><span>UX/UI</span><span>IA</span><span>WEB</span></div></div></div>
-          <div className="stage-card stage-small top"><Bot size={24} /><span>Automação ativa</span><b>24/7</b></div><div className="stage-card stage-small bottom"><Store size={24} /><span>E-commerce</span><b>organizado</b></div>
+        <div className="pethelp-visual"><img src="/work/pethelp-campaign-main.jpeg" alt="Campanha de apresentação do PetHelp" /><img src="/work/pethelp-app.png" alt="Tela de acesso do sistema PetHelp" /></div>
+      </article>
+
+      <article className="case case-mary">
+        <div className="mary-visual"><img className="mary-desktop" src="/work/mary-desktop.jpeg" alt="Página inicial da loja Mary Bless no computador" /><img className="mary-mobile" src="/work/mary-mobile.jpeg" alt="Página inicial da loja Mary Bless no celular" /></div>
+        <div className="case-copy">
+          <ProjectHeader number="02" label="E-COMMERCE · NUVEMSHOP" title="Mary Bless" />
+          <p className="case-lead">Reestruturação da operação digital de uma marca de vestuário e artigos religiosos, do catálogo à apresentação da loja.</p>
+          <ul className="deliveries"><li>Organização de produtos, variações, categorias e estoque</li><li>Banners e experiência responsiva para desktop e celular</li><li>Preparação de canais de venda e materiais de marketing</li></ul>
+          <div className="stack"><span>Nuvemshop</span><span>E-commerce</span><span>Catálogo</span><span>Conteúdo</span></div>
+          <ExternalButton href="https://marybless2.lojavirtualnuvem.com.br/">Visitar loja</ExternalButton>
         </div>
-      </section>
-      <section id="servicos" className="services shell section">
-        <div className="section-heading"><p className="kicker">O QUE EU FAÇO</p><h2>Estratégia, criação e tecnologia<br />no mesmo projeto.</h2></div>
-        <div className="service-grid">
-          <article><span className="icon-box"><Braces /></span><h3>Sites e landing pages</h3><p>Sites institucionais e páginas responsivas, pensadas para apresentar seu negócio e gerar contatos.</p><ul><li>Design e desenvolvimento</li><li>Versão para celular</li><li>Formulários e WhatsApp</li></ul></article>
-          <article><span className="icon-box"><ShoppingBag /></span><h3>E-commerce e Nuvemshop</h3><p>Organização de lojas virtuais para tornar o catálogo claro, consistente e pronto para vender.</p><ul><li>Produtos, variações e estoque</li><li>Banners e navegação</li><li>Integração de canais</li></ul></article>
-          <article><span className="icon-box"><Workflow /></span><h3>Automações com IA</h3><p>Fluxos inteligentes para reduzir tarefas manuais e melhorar o atendimento e a operação.</p><ul><li>WhatsApp e ManyChat</li><li>n8n e integrações</li><li>Agentes personalizados</li></ul></article>
+      </article>
+
+      <article className="case case-perfimetal">
+        <div className="case-copy">
+          <ProjectHeader number="03" label="AUTOMAÇÃO · OPERAÇÃO DE COMPRAS" title="Assistente de cotações" />
+          <p className="case-lead">Fluxo conversacional no WhatsApp para consultar histórico de preços, iniciar cotações e acompanhar respostas sem retirar o controle do comprador.</p>
+          <div className="metric-row"><div><strong>Texto + áudio</strong><span>Entrada flexível para a rotina</span></div><div><strong>Aprovação humana</strong><span>Nenhum envio sem confirmação</span></div><div><strong>Status centralizado</strong><span>Acompanhamento das cotações</span></div></div>
+          <p className="confidentiality">Interface e informações comerciais apresentadas de forma limitada para preservar dados do cliente.</p>
+          <div className="stack"><span>n8n</span><span>WhatsApp</span><span>Integrações</span><span>Automação</span></div>
         </div>
-      </section>
-      <section id="projetos" className="projects section"><div className="shell">
-        <div className="projects-head"><div><p className="kicker">PORTFÓLIO</p><h2>Projetos que unem<br />design e solução.</h2></div><div className="filters" role="group" aria-label="Filtrar projetos">{filters.map((filter)=><button key={filter} onClick={()=>setActive(filter)} className={active===filter?"active":""}>{filter}</button>)}</div></div>
-        <div className="project-grid">{visible.map((project)=><article className="project-card" key={project.title}><div className="project-visual"><ProjectVisual art={project.art} title={project.title} /></div><div className="project-info"><p className="project-eyebrow">{project.eyebrow}</p><div className="project-title-row"><h3>{project.title}</h3>{project.url&&<a href={project.url} target="_blank" rel="noreferrer" aria-label={`Abrir ${project.title}`}><ExternalLink size={18}/></a>}</div><p>{project.description}</p><div className="tags">{project.tags.map((tag)=><span key={tag}>{tag}</span>)}</div></div></article>)}</div>
-        <p className="privacy-note">Informações comerciais e dados de clientes foram adaptados quando necessário.</p>
-      </div></section>
-      <section id="sobre" className="about shell section">
-        <div className="about-number">01</div><div><p className="kicker">SOBRE MIM</p><h2>Transformo necessidades reais em soluções digitais simples de usar.</h2></div>
-        <div className="about-copy"><p>Sou Lavínia Ferraz, desenvolvedora e estudante de Sistemas de Informação e Engenharia da Computação. Atuo com desenvolvimento web, estruturação de e-commerce e automações com inteligência artificial.</p><p>Meu trabalho combina raciocínio técnico, organização e cuidado visual. Antes de começar, procuro entender a rotina do negócio para construir algo que realmente ajude o cliente.</p><div className="skill-pills"><span>React</span><span>JavaScript</span><span>Python</span><span>n8n</span><span>Nuvemshop</span><span>Figma</span><span>IA</span></div></div>
-      </section>
-      <section className="contact shell section"><Sparkles className="contact-spark" /><p className="kicker">VAMOS CONVERSAR?</p><h2>Conte o que você precisa.<br />Eu cuido da parte digital.</h2><p>Atendimento para sites, lojas virtuais e automações.</p><div className="hero-actions contact-actions"><a className="button light" href="https://wa.me/5524992643632" target="_blank" rel="noreferrer">WhatsApp: (24) 99264-3632</a><a className="button contact-email" href="mailto:contato.nexoautomacoes@gmail.com"><Mail size={18}/> Enviar e-mail</a></div></section>
-      <footer className="footer shell"><div><strong>Lavínia Ferraz</strong><span>Sites · E-commerce · Automações com IA</span></div><div><a href="https://github.com/v1ih" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/laviniaferraz-v1ih" target="_blank" rel="noreferrer">LinkedIn</a><a href="mailto:contato.nexoautomacoes@gmail.com">E-mail</a><a href="https://wa.me/5524992643632" target="_blank" rel="noreferrer">WhatsApp</a></div><small>© 2026 · Desenvolvido por Lavínia Ferraz</small></footer>
-    </main>
-  );
+        <div className="phone-gallery"><img src="/work/perfimetal-query-anon.png" alt="Assistente consultando histórico de preços, com dados anonimizados" /><img src="/work/perfimetal-quote-anon.png" alt="Assistente solicitando autorização para cotação, com dados anonimizados" /><img src="/work/perfimetal-status-anon.png" alt="Assistente apresentando o status das cotações, com dados anonimizados" /></div>
+      </article>
+
+      <article className="case case-revolve">
+        <div className="revolve-art" aria-hidden="true"><span>REVOLVE</span><i>ORBIT / 01</i><div className="orbit"><b /><b /><b /></div><p>Menos lembretes.<br/>Mais presença.</p></div>
+        <div className="case-copy">
+          <ProjectHeader number="04" label="FRONT-END · EXPERIÊNCIA DE MARCA" title="Revolve Global" />
+          <p className="case-lead">Site responsivo para um produto de organização pessoal, com narrativa de marca, apresentação do dispositivo, loja, suporte e termos.</p>
+          <div className="stack"><span>Next.js</span><span>UI Design</span><span>Responsivo</span><span>GitHub Pages</span></div>
+          <div className="link-row"><ExternalButton href="https://v1ih.github.io/revolve-global/">Acessar projeto</ExternalButton><ExternalButton href="https://github.com/v1ih/revolve-global" subtle><Code2 size={15}/> Ver código</ExternalButton></div>
+        </div>
+      </article>
+    </section>
+
+    <section className="visual-work" id="conteudo">
+      <div className="section-intro compact"><p className="overline">DESIGN &amp; CONTEÚDO</p><h2>O produto também precisa<br />saber se apresentar.</h2><p>Peças digitais criadas para explicar benefícios, apoiar campanhas e manter consistência entre produto, loja e comunicação.</p></div>
+      <div className="campaign-grid"><figure className="campaign-large"><img src="/work/pethelp-campaign-data.jpeg" alt="Campanha PetHelp sobre registros de saúde"/><figcaption>PetHelp · Conteúdo informativo</figcaption></figure><figure><img src="/work/mary-coupon.jpeg" alt="Campanha de primeira compra Mary Bless"/><figcaption>Mary Bless · Campanha promocional</figcaption></figure><figure><img src="/work/pethelp-campaign-vetpass.jpeg" alt="Campanha Vet-Pass do PetHelp"/><figcaption>PetHelp · Apresentação de recurso</figcaption></figure><figure className="campaign-tall"><img src="/work/pethelp-campaign-vaccines.jpeg" alt="Story sobre controle de vacinas no PetHelp"/><figcaption>PetHelp · Story de produto</figcaption></figure></div>
+    </section>
+
+    <section className="expertise" id="atuacao">
+      <div className="section-intro"><p className="overline">ATUAÇÃO</p><h2>Estratégia suficiente.<br />Execução de verdade.</h2></div>
+      <div className="expertise-grid"><article><Code2/><span>01</span><h3>Desenvolvimento web</h3><p>Sites, páginas de apresentação e interfaces responsivas com atenção a estrutura, clareza e manutenção.</p></article><article><ShoppingBag/><span>02</span><h3>E-commerce</h3><p>Organização de lojas, catálogo, navegação, banners, integrações e preparação dos canais de venda.</p></article><article><Workflow/><span>03</span><h3>Automação</h3><p>Fluxos que conectam atendimento, dados e operação para reduzir tarefas manuais sem perder controle.</p></article></div>
+    </section>
+
+    <section className="lab"><div className="lab-copy"><p className="overline">EXPERIMENTOS &amp; APRENDIZADO</p><h2>Aroma Beans</h2><p>Chatbot de atendimento desenvolvido para responder dúvidas sobre cardápio, horários e informações de uma cafeteria. A integração está sendo revisada para manter a chave da API fora do código público.</p><a href="https://github.com/v1ih/ai-chatbot" {...external}>Ver repositório <ArrowUpRight size={15}/></a></div><div className="lab-image"><img src="/work/aroma-chatbot.jpeg" alt="Interface do chatbot Aroma Beans" /></div></section>
+
+    <section className="about" id="sobre"><div><p className="overline">SOBRE</p><h2>Construindo uma carreira com visão de produto e negócio.</h2></div><div className="about-text"><p>Sou Lavínia Ferraz, desenvolvedora e estudante de Sistemas de Informação e Engenharia da Computação. Trabalho entre desenvolvimento web, e-commerce e automação.</p><p>Gosto de entender o problema antes de escolher a ferramenta. Meu objetivo é construir uma empresa capaz de acompanhar negócios desde a primeira organização digital até soluções mais completas de operação e crescimento.</p><div className="about-meta"><span>React</span><span>TypeScript</span><span>JavaScript</span><span>Python</span><span>n8n</span><span>Nuvemshop</span><span>UX/UI</span></div></div></section>
+
+    <section className="contact" id="contato"><p className="overline">CONTATO</p><h2>Tem um projeto ou um problema<br />que precisa sair do papel?</h2><div className="contact-actions"><a href="mailto:contato.nexoautomacoes@gmail.com"><Mail size={18}/> contato.nexoautomacoes@gmail.com</a><a href="https://wa.me/5524992643632" {...external}>WhatsApp <ArrowUpRight size={17}/></a></div></section>
+
+    <footer><div><strong>Lavínia Ferraz</strong><span>Desenvolvimento web · E-commerce · Automação</span></div><div><a href="https://github.com/v1ih" {...external}>GitHub</a><a href="https://www.linkedin.com/in/laviniaferraz-v1ih" {...external}>LinkedIn</a></div><small>© 2026 · Desenvolvido por Lavínia Ferraz</small></footer>
+  </main>;
 }
