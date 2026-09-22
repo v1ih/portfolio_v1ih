@@ -28,6 +28,7 @@
 
 .avatar-frame {
   width: 76%;
+  aspect-ratio: 1 / 1;
   margin-left: auto;
   border: 2px solid var(--ink);
   background: var(--paper);
@@ -38,8 +39,9 @@
 
 .avatar-frame img {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .hero-visual .code-card {

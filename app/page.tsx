@@ -18,7 +18,7 @@ export default function Home() {
           <div className="hero-actions"><a className="button primary" href="#projetos">Ver projetos <ArrowDown size={17}/></a><a className="text-link" href="https://github.com/v1ih" {...external}>GitHub <ArrowUpRight size={15}/></a></div>
         </div>
         <div className="hero-visual">
-          <div className="avatar-frame"><img src="/brand/lavinia-avatar.png" alt="Ilustração de Lavínia programando"/></div>
+          <div className="avatar-frame"><img src="/brand/lavinia-avatar.webp" alt="Ilustração de Lavínia programando" width="900" height="900"/></div>
           <div className="code-card" aria-label="Apresentação em formato de código">
             <div className="window-bar"><i/><i/><i/><span>lavinia.ts</span></div>
             <pre><code><b>const</b> lavinia = {'{'}{`\n`}  foco: [<em>"web"</em>, <em>"lojas"</em>, <em>"automação"</em>],{`\n`}  gostaDe: <em>"entender antes de construir"</em>{`\n`}{'}'};</code></pre>
