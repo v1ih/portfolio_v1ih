@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./brand.css";
 
 export const metadata: Metadata = {
   title: "Lavínia Ferraz — Desenvolvedora web",
   description: "Sites, e-commerce e automações desenvolvidos por Lavínia Ferraz.",
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: "/favicon-new.svg",
+    shortcut: "/favicon-new.svg",
   },
 };
 

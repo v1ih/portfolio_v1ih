@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main>
       <header className="topbar">
-        <a className="wordmark" href="#inicio">LAVÍNIA<span>FERRAZ</span></a>
+        <a className="wordmark" href="#inicio"><img src="/brand/lf-logo.svg" alt=""/><span><b>LAVÍNIA</b> FERRAZ</span></a>
         <nav aria-label="Navegação principal"><a href="#projetos">Projetos</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a></nav>
       </header>
 
@@ -17,12 +17,14 @@ export default function Home() {
           <p className="hero-intro">Eu construo sites, lojas e sistemas que resolvem problemas de verdade — da primeira tela à rotina de quem vai usar.</p>
           <div className="hero-actions"><a className="button primary" href="#projetos">Ver projetos <ArrowDown size={17}/></a><a className="text-link" href="https://github.com/v1ih" {...external}>GitHub <ArrowUpRight size={15}/></a></div>
         </div>
-        <div className="code-card" aria-label="Apresentação em formato de código">
-          <div className="window-bar"><i/><i/><i/><span>lavinia.ts</span></div>
-          <pre><code><b>const</b> lavinia = {'{'}{`\n`}  foco: [<em>"web"</em>, <em>"lojas"</em>, <em>"automação"</em>],{`\n`}  gostaDe: <em>"entender antes de construir"</em>,{`\n`}  objetivo: <em>"criar soluções que crescem"</em>{`\n`}{'}'};</code></pre>
-          <div className="available"><span/> disponível para novos projetos</div>
+        <div className="hero-visual">
+          <div className="avatar-frame"><img src="/brand/lavinia-avatar.png" alt="Ilustração de Lavínia programando"/></div>
+          <div className="code-card" aria-label="Apresentação em formato de código">
+            <div className="window-bar"><i/><i/><i/><span>lavinia.ts</span></div>
+            <pre><code><b>const</b> lavinia = {'{'}{`\n`}  foco: [<em>"web"</em>, <em>"lojas"</em>, <em>"automação"</em>],{`\n`}  gostaDe: <em>"entender antes de construir"</em>{`\n`}{'}'};</code></pre>
+            <div className="available"><span/> disponível para novos projetos</div>
+          </div>
         </div>
-        <div className="hero-sticker">DEV<br/>+<br/>PRODUTO</div>
       </section>
 
       <section className="ticker" aria-hidden="true"><div>REACT ✦ TYPESCRIPT ✦ NUVEMSHOP ✦ N8N ✦ JAVASCRIPT ✦ UX/UI ✦ REACT ✦ TYPESCRIPT ✦ NUVEMSHOP ✦ N8N ✦</div></section>
@@ -48,6 +50,11 @@ export default function Home() {
         <article className="project project-revolve">
           <div className="revolve-card"><span>REVOLVE</span><div className="orbit"><i/><i/><i/></div><small>LESS REMINDING.<br/>MORE BEING.</small></div>
           <div className="project-copy"><span className="project-index">04 / FRONT-END</span><h3>Revolve Global</h3><p>Site responsivo criado a partir de um briefing, com apresentação do produto, loja, suporte e uma identidade visual própria.</p><div className="tags"><span>Next.js</span><span>Responsivo</span><span>UI Design</span></div><div className="project-actions"><a href="https://v1ih.github.io/revolve-global/" {...external}>Abrir projeto <ArrowUpRight size={16}/></a><a href="https://github.com/v1ih/revolve-global" {...external}>Ver código</a></div></div>
+        </article>
+
+        <article className="project project-chatbot">
+          <div className="project-copy"><span className="project-index">05 / CHATBOT</span><h3>Aroma Beans</h3><p>Assistente de atendimento para uma cafeteria fictícia. Ele responde dúvidas sobre cardápio, horários, endereço e preparo de café.</p><ul><li>Base de conhecimento personalizada</li><li>Respostas rápidas mesmo sem API externa</li><li>Interface responsiva em React</li></ul><div className="tags"><span>React</span><span>JavaScript</span><span>Chatbot</span></div><div className="project-actions"><a href="https://v1ih.github.io/ai-chatbot/" {...external}>Testar chatbot <ArrowUpRight size={16}/></a><a href="https://github.com/v1ih/ai-chatbot" {...external}>Ver código</a></div></div>
+          <div className="chatbot-demo"><div className="chatbot-demo-head"><span>☕ Aroma Beans</span><small>online</small></div><div className="mini-bubble bot">Olá! Posso ajudar com o cardápio, horários ou localização.</div><div className="mini-bubble user">Que horas vocês abrem?</div><div className="mini-bubble bot">De segunda a sexta, das 7h às 21h. Nos fins de semana, das 8h às 22h.</div><div className="chat-input">Digite sua mensagem… <b>↑</b></div></div>
         </article>
       </section>
 
