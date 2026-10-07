@@ -39,17 +39,17 @@ export default function Home() {
 
         <article className="project project-lfs">
           <div className="project-copy"><span className="project-index">02 / PLATAFORMA FULL STACK</span><h3>LF Workspace</h3><p>Plataforma criada para centralizar trabalho, negócio e carreira em um único workspace — com dados reais de produtividade, clientes, finanças e evolução profissional.</p><ul><li>Kanban, sprints, projetos e controle de horas</li><li>CRM, clientes, metas financeiras e relatórios</li><li>Job tracker, skill matrix e conquistas baseadas em dados reais</li></ul><div className="tags"><span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span><span>Full Stack</span><span>Vercel</span></div><div className="project-actions"><a href="https://lf-workspace.vercel.app/" {...external}>Conhecer o projeto <ArrowUpRight size={16}/></a></div></div>
-          <div className="project-gallery lf-gallery" aria-label="Galeria do LF Workspace">
-            <a className="gallery-main" href="/work/lf-workspace/01-dashboard.png" {...external}><img src="/work/lf-workspace/01-dashboard.png" alt="Dashboard do LF Workspace"/><span><ZoomIn size={15}/> ampliar dashboard</span></a>
-            <div className="gallery-thumbs">
-              <a href="/work/lf-workspace/03-my-work.png" {...external}><img src="/work/lf-workspace/03-my-work.png" alt="Kanban My Work"/><span>My Work</span></a>
-              <a href="/work/lf-workspace/04-sprints.png" {...external}><img src="/work/lf-workspace/04-sprints.png" alt="Gestão de sprints"/><span>Sprints</span></a>
-              <a href="/work/lf-workspace/09-finance.png" {...external}><img src="/work/lf-workspace/09-finance.png" alt="Painel financeiro"/><span>Finance</span></a>
-              <a href="/work/lf-workspace/11-learning.png" {...external}><img src="/work/lf-workspace/11-learning.png" alt="Skill Matrix"/><span>Learning</span></a>
-              <a href="/work/lf-workspace/12-achievements.png" {...external}><img src="/work/lf-workspace/12-achievements.png" alt="Achievements"/><span>Achievements</span></a>
-              <a href="/work/lf-workspace/13-reports.png" {...external}><img src="/work/lf-workspace/13-reports.png" alt="Relatórios do LF Workspace"/><span>Reports</span></a>
+          <div className="project-gallery lf-gallery" aria-label="Telas do LF Workspace">
+            <div className="gallery-browser">
+              <div className="gallery-browser-bar"><i></i><i></i><i></i><span>LF Workspace</span></div>
+              <a className="gallery-main" href="/work/lf-workspace/01-dashboard.png" {...external}><img src="/work/lf-workspace/01-dashboard.png" alt="Dashboard do LF Workspace"/><span><ZoomIn size={14}/> Ver tela completa</span></a>
             </div>
-            <p className="gallery-note">Dashboard · Kanban · Sprints · Finance · Skills · Achievements · Reports</p>
+            <div className="gallery-strip">
+              <a href="/work/lf-workspace/03-my-work.png" {...external}><img src="/work/lf-workspace/03-my-work.png" alt="Kanban My Work"/><span>01 / My Work</span></a>
+              <a href="/work/lf-workspace/04-sprints.png" {...external}><img src="/work/lf-workspace/04-sprints.png" alt="Gestão de sprints"/><span>02 / Sprints</span></a>
+              <a href="/work/lf-workspace/09-finance.png" {...external}><img src="/work/lf-workspace/09-finance.png" alt="Painel financeiro"/><span>03 / Finance</span></a>
+              <a href="/work/lf-workspace/13-reports.png" {...external}><img src="/work/lf-workspace/13-reports.png" alt="Relatórios"/><span>04 / Reports</span></a>
+            </div>
           </div>
         </article>
 
