@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowUpRight, Code2, Mail, ShoppingBag, Workflow } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Code2, Mail, ShoppingBag, Workflow, ZoomIn } from "lucide-react";
 
 const external = { target: "_blank", rel: "noreferrer" } as const;
 
@@ -39,7 +39,18 @@ export default function Home() {
 
         <article className="project project-lfs">
           <div className="project-copy"><span className="project-index">02 / PLATAFORMA FULL STACK</span><h3>LF Workspace</h3><p>Plataforma criada para centralizar trabalho, negócio e carreira em um único workspace — com dados reais de produtividade, clientes, finanças e evolução profissional.</p><ul><li>Kanban, sprints, projetos e controle de horas</li><li>CRM, clientes, metas financeiras e relatórios</li><li>Job tracker, skill matrix e conquistas baseadas em dados reais</li></ul><div className="tags"><span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span><span>Full Stack</span><span>Vercel</span></div><div className="project-actions"><a href="https://lf-workspace.vercel.app/" {...external}>Conhecer o projeto <ArrowUpRight size={16}/></a></div></div>
-          <div className="lf-demo" aria-label="Demonstração do dashboard do LF Workspace"><div className="lf-sidebar"><b>LF</b><span>Dashboard</span><span>Today</span><span>My Work</span><span>Sprints</span><span>Projects</span><small>BUSINESS</small><span>Clients</span><span>CRM</span><span>Finance</span></div><div className="lf-main"><div className="lf-top"><small>Tuesday, October 6</small><strong>Good evening, Lavínia 👋</strong><span>Full Stack Developer · Founder</span></div><div className="lf-cards"><div><small>SPRINT</small><b>0 / 8</b><span>tickets completed</span></div><div><small>WORKED</small><b>0m</b><span>this week</span></div><div><small>APPLICATIONS</small><b>0 / 10</b><span>this week</span></div><div><small>LEADS</small><b>0 / 5</b><span>contacted</span></div></div><div className="lf-goals"><div><small>BUSINESS</small><b>R$ 0 <i>/ R$ 4.000</i></b></div><div><small>INTERNATIONAL DEVELOPER</small><b>$0 <i>/ $1,500</i></b></div></div></div></div>
+          <div className="project-gallery lf-gallery" aria-label="Galeria do LF Workspace">
+            <a className="gallery-main" href="/work/lf-workspace/01-dashboard.png" {...external}><img src="/work/lf-workspace/01-dashboard.png" alt="Dashboard do LF Workspace"/><span><ZoomIn size={15}/> ampliar dashboard</span></a>
+            <div className="gallery-thumbs">
+              <a href="/work/lf-workspace/03-my-work.png" {...external}><img src="/work/lf-workspace/03-my-work.png" alt="Kanban My Work"/><span>My Work</span></a>
+              <a href="/work/lf-workspace/04-sprints.png" {...external}><img src="/work/lf-workspace/04-sprints.png" alt="Gestão de sprints"/><span>Sprints</span></a>
+              <a href="/work/lf-workspace/09-finance.png" {...external}><img src="/work/lf-workspace/09-finance.png" alt="Painel financeiro"/><span>Finance</span></a>
+              <a href="/work/lf-workspace/11-learning.png" {...external}><img src="/work/lf-workspace/11-learning.png" alt="Skill Matrix"/><span>Learning</span></a>
+              <a href="/work/lf-workspace/12-achievements.png" {...external}><img src="/work/lf-workspace/12-achievements.png" alt="Achievements"/><span>Achievements</span></a>
+              <a href="/work/lf-workspace/13-reports.png" {...external}><img src="/work/lf-workspace/13-reports.png" alt="Relatórios do LF Workspace"/><span>Reports</span></a>
+            </div>
+            <p className="gallery-note">Dashboard · Kanban · Sprints · Finance · Skills · Achievements · Reports</p>
+          </div>
         </article>
 
         <article className="project project-pet">
