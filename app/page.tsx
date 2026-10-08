@@ -1,4 +1,5 @@
-import { ArrowDown, ArrowUpRight, Code2, Mail, ShoppingBag, Workflow, ZoomIn, Globe2, BriefcaseBusiness } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Code2, Mail, ShoppingBag, Workflow, Globe2, BriefcaseBusiness } from "lucide-react";
+import { GalleryButton, ProjectGallery } from "./project-gallery";
 
 const external = { target: "_blank", rel: "noreferrer" } as const;
 
@@ -39,43 +40,21 @@ export default function Home() {
 
         <article className="project project-lfs">
           <div className="project-copy"><span className="project-index">02 / PLATAFORMA FULL STACK</span><h3>LF Workspace</h3><p>Plataforma criada para centralizar trabalho, negócio e carreira em um único workspace — com dados reais de produtividade, clientes, finanças e evolução profissional.</p><ul><li>Kanban, sprints, projetos e controle de horas</li><li>CRM, clientes, metas financeiras e relatórios</li><li>Job tracker, skill matrix e conquistas baseadas em dados reais</li></ul><div className="tags"><span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span><span>Full Stack</span><span>Vercel</span></div><div className="project-actions"><a href="https://lf-workspace.vercel.app/" {...external}>Conhecer o projeto <ArrowUpRight size={16}/></a></div></div>
-          <div className="project-gallery lf-gallery" aria-label="Telas do LF Workspace">
-            <div className="gallery-browser">
-              <div className="gallery-browser-bar"><i></i><i></i><i></i><span>LF Workspace</span></div>
-              <a className="gallery-main" href="/work/lf-workspace/01-dashboard.png" {...external}><img src="/work/lf-workspace/01-dashboard.png" alt="Dashboard do LF Workspace"/><span><ZoomIn size={14}/> Ver tela completa</span></a>
-            </div>
-            <div className="gallery-strip">
-              <a href="/work/lf-workspace/03-my-work.png" {...external}><img src="/work/lf-workspace/03-my-work.png" alt="Kanban My Work"/><span>01 / My Work</span></a>
-              <a href="/work/lf-workspace/04-sprints.png" {...external}><img src="/work/lf-workspace/04-sprints.png" alt="Gestão de sprints"/><span>02 / Sprints</span></a>
-              <a href="/work/lf-workspace/09-finance.png" {...external}><img src="/work/lf-workspace/09-finance.png" alt="Painel financeiro"/><span>03 / Finance</span></a>
-              <a href="/work/lf-workspace/13-reports.png" {...external}><img src="/work/lf-workspace/13-reports.png" alt="Relatórios"/><span>04 / Reports</span></a>
-            </div>
-          </div>
+          <ProjectGallery id="lf-workspace" />
         </article>
 
         <article className="project project-lfb">
           <div className="project-copy"><span className="project-index">03 / PRODUTO PWA</span><h3>LF Business</h3><p>Aplicativo para freelancers calcularem o preço de um projeto, enviarem a proposta pelo WhatsApp e acompanharem cada cliente até o fechamento. Funciona offline e instala no celular, sem cadastro.</p><ul><li>Calculadora de orçamento e proposta em WhatsApp ou PDF</li><li>Funil de prospecção com retornos agendados e indicadores</li><li>Offline, tema escuro e 26 testes automatizados</li></ul><div className="tags"><span>JavaScript</span><span>PWA</span><span>Service Worker</span><span>Testes</span><span>Vercel</span></div><div className="project-actions"><a href="https://lf-business-lake.vercel.app/" {...external}>Abrir aplicativo <ArrowUpRight size={16}/></a><a href="https://github.com/v1ih/lf-business" {...external}>Ver código</a></div></div>
-          <div className="project-gallery lf-gallery" aria-label="Telas do LF Business">
-            <div className="gallery-browser">
-              <div className="gallery-browser-bar"><i></i><i></i><i></i><span>LF Business</span></div>
-              <a className="gallery-main" href="/work/lf-business/01-visao-geral.png" {...external}><img src="/work/lf-business/01-visao-geral.png" alt="Visão geral do LF Business com retornos agendados"/><span><ZoomIn size={14}/> Ver tela completa</span></a>
-            </div>
-            <div className="gallery-strip">
-              <a href="/work/lf-business/02-orcamentos.png" {...external}><img src="/work/lf-business/02-orcamentos.png" alt="Calculadora de orçamentos"/><span>01 / Orçamentos</span></a>
-              <a href="/work/lf-business/03-proposta.png" {...external}><img src="/work/lf-business/03-proposta.png" alt="Proposta comercial gerada"/><span>02 / Proposta</span></a>
-              <a href="/work/lf-business/04-prospeccao.png" {...external}><img src="/work/lf-business/04-prospeccao.png" alt="Funil de prospecção"/><span>03 / Prospecção</span></a>
-              <a href="/work/lf-business/05-tema-escuro.png" {...external}><img src="/work/lf-business/05-tema-escuro.png" alt="Tema escuro"/><span>04 / Tema escuro</span></a>
-            </div>
-          </div>
+          <ProjectGallery id="lf-business" />
         </article>
 
         <article className="project project-pet">
           <div className="project-copy"><span className="project-index">04 / PRODUTO DIGITAL</span><h3>PetHelp</h3><p>Meu trabalho de conclusão de curso virou uma plataforma para organizar a saúde dos pets e conectar responsáveis, clínicas e veterinários.</p><ul><li>Pesquisa e definição do produto</li><li>Interface responsiva</li><li>Fluxos para três perfis de usuário</li></ul><div className="tags"><span>React</span><span>TypeScript</span><span>UX/UI</span></div><div className="project-actions"><a href="https://pethelp-web-six.vercel.app/" {...external}>Abrir projeto <ArrowUpRight size={16}/></a><a href="https://github.com/v1ih/pethelp" {...external}>Ver código</a></div></div>
-          <div className="project-media pet-media"><img src="/work/pethelp-app.png" alt="Tela de entrada do PetHelp"/></div>
+          <ProjectGallery id="pethelp" />
         </article>
 
         <article className="project project-mary">
-          <div className="project-media browser-frame"><div className="browser-top"><i/><i/><i/><span>marybless2.lojavirtualnuvem.com.br</span></div><img src="/work/mary-desktop.jpeg" alt="Loja Mary Bless na Nuvemshop"/></div>
+          <ProjectGallery id="mary-bless" />
           <div className="project-copy"><span className="project-index">05 / E-COMMERCE</span><h3>Mary Bless</h3><p>Reorganização de uma loja Nuvemshop: catálogo, variações, categorias, banners e experiência de compra no computador e no celular.</p><ul><li>Estrutura e navegação da loja</li><li>Organização de mais de 180 itens</li><li>Preparação dos canais de venda</li></ul><div className="tags"><span>Nuvemshop</span><span>E-commerce</span><span>Conteúdo</span></div><div className="project-actions"><a href="https://marybless2.lojavirtualnuvem.com.br/" {...external}>Visitar loja <ArrowUpRight size={16}/></a></div></div>
         </article>
 
@@ -86,11 +65,11 @@ export default function Home() {
 
         <article className="project project-revolve">
           <div className="revolve-card"><span>REVOLVE</span><div className="orbit"><i/><i/><i/></div><small>LESS REMINDING.<br/>MORE BEING.</small></div>
-          <div className="project-copy"><span className="project-index">07 / FRONT-END</span><h3>Revolve Global</h3><p>Site responsivo criado a partir de um briefing, com apresentação do produto, loja, suporte e uma identidade visual própria.</p><div className="tags"><span>Next.js</span><span>Responsivo</span><span>UI Design</span></div><div className="project-actions"><a href="https://v1ih.github.io/revolve-global/" {...external}>Abrir projeto <ArrowUpRight size={16}/></a><a href="https://github.com/v1ih/revolve-global" {...external}>Ver código</a></div></div>
+          <div className="project-copy"><span className="project-index">07 / FRONT-END</span><h3>Revolve Global</h3><p>Site responsivo criado a partir de um briefing, com apresentação do produto, loja, suporte e uma identidade visual própria.</p><div className="tags"><span>Next.js</span><span>Responsivo</span><span>UI Design</span></div><div className="project-actions"><a href="https://v1ih.github.io/revolve-global/" {...external}>Abrir projeto <ArrowUpRight size={16}/></a><a href="https://github.com/v1ih/revolve-global" {...external}>Ver código</a><GalleryButton id="revolve" /></div></div>
         </article>
 
         <article className="project project-chatbot">
-          <div className="project-copy"><span className="project-index">08 / CHATBOT</span><h3>Aroma Beans</h3><p>Assistente de atendimento para uma cafeteria fictícia. Ele responde dúvidas sobre cardápio, horários, endereço e preparo de café.</p><ul><li>Base de conhecimento personalizada</li><li>Respostas rápidas mesmo sem API externa</li><li>Interface responsiva em React</li></ul><div className="tags"><span>React</span><span>JavaScript</span><span>Chatbot</span></div><div className="project-actions"><a href="https://ai-chatbot-lavinia.vercel.app/" {...external}>Testar chatbot <ArrowUpRight size={16}/></a><a href="https://github.com/v1ih/ai-chatbot" {...external}>Ver código</a></div></div>
+          <div className="project-copy"><span className="project-index">08 / CHATBOT</span><h3>Aroma Beans</h3><p>Assistente de atendimento para uma cafeteria fictícia. Ele responde dúvidas sobre cardápio, horários, endereço e preparo de café.</p><ul><li>Base de conhecimento personalizada</li><li>Respostas rápidas mesmo sem API externa</li><li>Interface responsiva em React</li></ul><div className="tags"><span>React</span><span>JavaScript</span><span>Chatbot</span></div><div className="project-actions"><a href="https://ai-chatbot-lavinia.vercel.app/" {...external}>Testar chatbot <ArrowUpRight size={16}/></a><a href="https://github.com/v1ih/ai-chatbot" {...external}>Ver código</a><GalleryButton id="aroma-beans" /></div></div>
           <div className="chatbot-demo"><div className="chatbot-demo-head"><span>☕ Aroma Beans</span><small>online</small></div><div className="mini-bubble bot">Olá! Posso ajudar com o cardápio, horários ou localização.</div><div className="mini-bubble user">Que horas vocês abrem?</div><div className="mini-bubble bot">De segunda a sexta, das 7h às 21h. Nos fins de semana, das 8h às 22h.</div><div className="chat-input">Digite sua mensagem… <b>↑</b></div></div>
         </article>
       </section>

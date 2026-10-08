@@ -1,0 +1,213 @@
+/* Botão "Ver as N telas" embaixo das miniaturas */
+.gallery-all {
+  margin-top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 800;
+  border-bottom: 2px solid;
+  padding-bottom: 4px;
+}
+.gallery-all:hover,
+.project-actions a[data-gallery]:hover {
+  color: var(--coral);
+}
+.gallery-main,
+.gallery-strip a {
+  cursor: zoom-in;
+}
+
+/* ================= Galeria em tela cheia ================= */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  background: #18171a;
+  color: var(--paper);
+}
+@keyframes lightbox-in {
+  from {
+    opacity: 0;
+  }
+}
+.lightbox-bar {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(255, 248, 238, 0.12);
+  font: 700 11px ui-monospace, monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.lightbox-title {
+  flex: 1;
+}
+.lightbox-count {
+  color: var(--cream);
+}
+.lightbox-close,
+.lightbox-nav {
+  display: grid;
+  place-items: center;
+  background: transparent;
+  color: var(--paper);
+  border: 2px solid var(--paper);
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    color 0.15s,
+    transform 0.15s;
+}
+.lightbox-close {
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  line-height: 1;
+}
+.lightbox-close:hover,
+.lightbox-nav:hover {
+  background: var(--coral);
+  border-color: var(--coral);
+}
+.lightbox-close:focus-visible,
+.lightbox-nav:focus-visible,
+.lightbox-thumbs button:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 3px;
+}
+.lightbox-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  padding: 22px 24px 12px;
+  min-height: 0;
+}
+.lightbox-stage figure {
+  margin: 0;
+  max-width: min(1400px, 100%);
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 0;
+}
+.lightbox-stage img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100dvh - 230px);
+  object-fit: contain;
+  border: 2px solid var(--paper);
+  box-shadow: 10px 10px 0 var(--coral);
+  background: #fff;
+  animation: lightbox-in 0.2s ease-out;
+}
+.lightbox-stage figure.is-mobile img {
+  border-radius: 22px;
+  box-shadow: 8px 8px 0 var(--lime);
+}
+.lightbox-stage figcaption {
+  margin-top: 18px;
+  font: 700 11px ui-monospace, monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cream);
+  text-align: center;
+}
+.lightbox-nav {
+  flex: 0 0 auto;
+  width: 52px;
+  height: 52px;
+  font-size: 22px;
+}
+.lightbox-nav.prev:hover {
+  transform: translateX(-3px);
+}
+.lightbox-nav.next:hover {
+  transform: translateX(3px);
+}
+.lightbox-thumbs {
+  display: flex;
+  gap: 10px;
+  justify-content: safe center;
+  overflow-x: auto;
+  padding: 12px 20px 18px;
+  scrollbar-width: thin;
+}
+.lightbox-thumbs button {
+  flex: 0 0 auto;
+  width: 92px;
+  height: 58px;
+  padding: 0;
+  border: 2px solid transparent;
+  background: none;
+  cursor: pointer;
+  opacity: 0.5;
+  transition:
+    opacity 0.15s,
+    border-color 0.15s;
+}
+.lightbox-thumbs button:hover {
+  opacity: 0.85;
+}
+.lightbox-thumbs button.active {
+  opacity: 1;
+  border-color: var(--coral);
+}
+.lightbox-thumbs img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .lightbox-bar {
+    padding: 10px 14px;
+    gap: 12px;
+  }
+  .lightbox-stage {
+    padding: 14px 12px 8px;
+    gap: 0;
+  }
+  .lightbox-stage img {
+    max-height: calc(100dvh - 210px);
+    box-shadow: 6px 6px 0 var(--coral);
+  }
+  .lightbox-nav {
+    position: absolute;
+    bottom: 14px;
+    width: 44px;
+    height: 44px;
+    background: rgba(24, 23, 26, 0.75);
+    z-index: 1;
+  }
+  .lightbox-nav.prev {
+    left: 14px;
+  }
+  .lightbox-nav.next {
+    right: 14px;
+  }
+  .lightbox-thumbs button {
+    width: 64px;
+    height: 42px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lightbox-stage img {
+    animation: none;
+  }
+}
+
+@media (max-width: 850px) {
+  .project-mary .project-gallery {
+    order: 2;
+  }
+}

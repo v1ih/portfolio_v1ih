@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "./brand.css";
+import "./gallery.css";
+import { Lightbox } from "./lightbox";
 
 export const metadata: Metadata = {
   title: "Lavínia Ferraz — Desenvolvedora web",
@@ -18,7 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        <Lightbox />
+      </body>
     </html>
   );
 }
