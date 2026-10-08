@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowUpRight, Code2, Mail, ShoppingBag, Workflow, ZoomIn } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Code2, Mail, ShoppingBag, Workflow, ZoomIn, Globe2, BriefcaseBusiness } from "lucide-react";
 
 const external = { target: "_blank", rel: "noreferrer" } as const;
 
@@ -7,7 +7,7 @@ export default function Home() {
     <main>
       <header className="topbar">
         <a className="wordmark" href="#inicio"><img src="/brand/lf-logo.svg" alt=""/><span><b>LAVÍNIA</b> FERRAZ</span></a>
-        <nav aria-label="Navegação principal"><a href="#projetos">Projetos</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a></nav>
+        <nav aria-label="Navegação principal"><a href="#projetos">Projetos</a><a href="#servicos">Serviços</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a></nav>
       </header>
 
       <section className="hero" id="inicio">
@@ -15,7 +15,7 @@ export default function Home() {
           <p className="eyebrow">FULL STACK · SISTEMAS · AUTOMAÇÃO</p>
           <h1>Oi, eu sou a<br/><span>Lavínia.</span></h1>
           <p className="hero-intro">Eu construo aplicações, sites e automações que resolvem problemas de verdade — da interface ao banco de dados e à rotina de quem vai usar.</p>
-          <div className="hero-actions"><a className="button primary" href="#projetos">Ver projetos <ArrowDown size={17}/></a><a className="text-link" href="https://github.com/v1ih" {...external}>GitHub <ArrowUpRight size={15}/></a></div>
+          <div className="hero-actions"><a className="button primary" href="#contato">Solicitar projeto <ArrowUpRight size={17}/></a><a className="text-link" href="#projetos">Ver projetos <ArrowDown size={15}/></a><a className="text-link" href="https://github.com/v1ih" {...external}>GitHub <ArrowUpRight size={15}/></a></div>
         </div>
         <div className="hero-visual">
           <div className="avatar-frame"><img src="/brand/lavinia-avatar.webp" alt="Ilustração de Lavínia programando" width="900" height="900"/></div>
@@ -79,11 +79,25 @@ export default function Home() {
         </article>
       </section>
 
+
+      <section className="services-commercial" id="servicos" aria-labelledby="services-heading">
+        <div className="section-title"><p>COMO POSSO AJUDAR</p><h2 id="services-heading">Do problema à solução.</h2></div>
+        <p className="services-intro">Atuo como desenvolvedora Full Stack independente, em projetos sob medida e contratos com equipes de tecnologia. O orçamento considera escopo, integrações e complexidade.</p>
+        <div className="services-grid">
+          <article className="service-offer"><Globe2 size={29}/><h3>Sites profissionais</h3><p>Landing pages e sites responsivos para apresentar negócios e transformar visitas em contatos.</p><strong>A partir de R$ 900</strong><a href="#contato">Solicitar orçamento <ArrowUpRight size={16}/></a></article>
+          <article className="service-offer"><ShoppingBag size={29}/><h3>Lojas virtuais</h3><p>Criação e melhorias em e-commerce: catálogo, navegação, personalização e experiência de compra.</p><strong>A partir de R$ 1.500</strong><a href="#contato">Solicitar orçamento <ArrowUpRight size={16}/></a></article>
+          <article className="service-offer"><Workflow size={29}/><h3>Automações e integrações</h3><p>Fluxos inteligentes, APIs e integração de ferramentas para simplificar rotinas empresariais.</p><strong>A partir de R$ 1.200</strong><a href="#contato">Solicitar orçamento <ArrowUpRight size={16}/></a></article>
+          <article className="service-offer"><Code2 size={29}/><h3>Aplicações Full Stack</h3><p>Sistemas, plataformas e funcionalidades personalizadas, do front-end ao banco de dados.</p><strong>Orçamento personalizado</strong><a href="#contato">Conversar sobre o projeto <ArrowUpRight size={16}/></a></article>
+        </div>
+        <div className="contracts-banner"><BriefcaseBusiness size={26}/><div><h3>Também disponível para projetos e contratos com startups</h3><p>Desenvolvimento web, evolução de produtos, APIs e integrações para empresas brasileiras e internacionais.</p></div><a href="#contato">Vamos conversar <ArrowUpRight size={17}/></a></div>
+        <p className="services-note">Valores iniciais para escopos básicos. Hospedagem, ferramentas pagas e funcionalidades adicionais são orçadas separadamente.</p>
+      </section>
+
       <section className="skills"><div><Code2/><h3>Aplicações</h3><p>Sistemas e interfaces responsivas, da experiência do usuário ao banco de dados.</p></div><div><ShoppingBag/><h3>Lojas</h3><p>Catálogo, navegação, banners e rotina de e-commerce.</p></div><div><Workflow/><h3>Automação</h3><p>Fluxos que conectam atendimento, dados e operação.</p></div></section>
 
-      <section className="about" id="sobre"><p className="eyebrow">UM POUCO SOBRE MIM</p><div className="about-grid"><h2>Não quero só fazer telas bonitas.</h2><div><p>Sou Lavínia Ferraz, estudante de Sistemas de Informação e Engenharia da Computação. Gosto de entrar no problema, organizar o que está confuso e construir algo que as pessoas consigam usar.</p><p>Hoje trabalho com desenvolvimento full stack, e-commerce e automações. Meu plano é transformar essa experiência em uma empresa capaz de acompanhar outros negócios enquanto eles crescem.</p></div></div></section>
+      <section className="about" id="sobre"><p className="eyebrow">UM POUCO SOBRE MIM</p><div className="about-grid"><h2>Não quero só fazer telas bonitas.</h2><div><p>Sou Lavínia Ferraz, estudante de Sistemas de Informação e Engenharia da Computação. Gosto de entrar no problema, organizar o que está confuso e construir algo que as pessoas consigam usar.</p><p>Hoje trabalho com desenvolvimento full stack, e-commerce e automações. Também aceito projetos independentes e contratos técnicos, ajudando negócios e equipes a transformar necessidades reais em soluções digitais.</p></div></div></section>
 
-      <section className="contact" id="contato"><p>Tem uma ideia ou um processo que precisa funcionar melhor?</p><h2>Vamos conversar.</h2><div><a href="mailto:contato.nexoautomacoes@gmail.com"><Mail size={18}/> contato.nexoautomacoes@gmail.com</a><a href="https://wa.me/5524992643632" {...external}>WhatsApp <ArrowUpRight size={17}/></a></div></section>
+      <section className="contact" id="contato"><p>Tem uma ideia ou um processo que precisa funcionar melhor?</p><h2>Vamos conversar.</h2><div><a href="https://wa.me/5524992643632?text=Ol%C3%A1%2C%20Lav%C3%ADnia%21%20Encontrei%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." {...external}><Mail size={18}/> Solicitar orçamento pelo WhatsApp</a><a href="https://wa.me/5524992643632" {...external}>WhatsApp <ArrowUpRight size={17}/></a></div></section>
       <footer><strong>Lavínia Ferraz</strong><span>Desenvolvido com código, café e atenção aos detalhes.</span><a href="#inicio">Voltar ao topo ↑</a></footer>
     </main>
   );
