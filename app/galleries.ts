@@ -37,6 +37,12 @@ export const galleries = {
     w("lf-business", "06-celular.webp", "No celular", true),
     w("lf-business", "07-celular-proposta.webp", "Proposta no celular", true),
   ],
+  "lf-clinica": [
+    w("lf-clinica", "01-painel.webp", "Painel · confirmações e faltas", true),
+    w("lf-clinica", "02-agenda.webp", "Agenda por profissional", true),
+    w("lf-clinica", "03-fila.webp", "Fila de espera", true),
+    w("lf-clinica", "04-paciente.webp", "Ficha do paciente", true),
+  ],
   pethelp: [
     w("pethelp", "tutor-01-inicio.webp", "Tutor · Meus pets"),
     w("pethelp", "tutor-03-prontuario.webp", "Tutor · Prontuário"),
@@ -75,6 +81,7 @@ export type GalleryId = keyof typeof galleries;
 export const galleryTitles: Record<GalleryId, string> = {
   "lf-workspace": "LF Workspace",
   "lf-business": "LF Business",
+  "lf-clinica": "LF Clínica",
   pethelp: "PetHelp",
   "mary-bless": "Mary Bless",
   revolve: "Revolve Global",

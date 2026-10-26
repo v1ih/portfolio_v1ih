@@ -112,3 +112,60 @@
   .service-offer { padding: 25px; }
   .contracts-banner { flex-direction: column; align-items: flex-start; }
 }
+
+
+/* LF Assistente — painel no celular com fila de conversas e resposta pronta */
+.assist-demo { min-height: 520px; display: grid; place-items: center; padding: 34px; border: 2px solid var(--ink); background: #e3e9df; box-shadow: 10px 10px 0 var(--blue); }
+.assist-phone { width: min(330px, 100%); padding-bottom: 18px; border: 2px solid var(--ink); border-radius: 30px; overflow: hidden; background: var(--paper); box-shadow: 0 12px 30px #0002; }
+.assist-head { padding: 26px 20px 18px; display: flex; flex-direction: column; gap: 4px; color: var(--paper); background: var(--ink); }
+.assist-head small { font: 700 10px ui-monospace, monospace; letter-spacing: .08em; color: var(--lime); }
+.assist-head strong { font-size: 20px; letter-spacing: -.02em; }
+.assist-head span { font-size: 11px; color: #cfc6ba; }
+.assist-head span b { color: var(--paper); }
+.assist-list { padding: 8px 14px 0; }
+.assist-item { display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; align-items: center; gap: 10px; padding: 11px 4px; border-bottom: 1px solid #e6dccd; }
+.assist-item > i { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; font-style: normal; font-weight: 800; font-size: 13px; color: var(--ink); background: var(--cream); }
+.assist-item b { display: block; font-size: 13px; }
+.assist-item small { display: block; margin-top: 2px; font-size: 10.5px; color: #6f675e; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.assist-item em { font: 700 9px ui-monospace, monospace; font-style: normal; color: #6f675e; }
+.assist-item.hot > i { color: white; background: var(--coral); }
+.assist-item.hot em { padding: 4px 7px; border-radius: 999px; color: white; background: var(--coral); }
+.assist-reply { margin: 16px 14px 0; padding: 14px; border: 1.5px solid var(--ink); border-radius: 14px; border-bottom-left-radius: 2px; background: #f3f6ef; }
+.assist-reply span { display: block; margin-bottom: 7px; font: 700 9px ui-monospace, monospace; letter-spacing: .06em; text-transform: uppercase; color: var(--blue); }
+.assist-reply p { margin: 0; font-size: 12.5px; line-height: 1.5; }
+.assist-send { margin: 12px 14px 0; padding: 12px 16px; display: flex; justify-content: center; align-items: center; gap: 8px; border: 2px solid var(--ink); border-radius: 999px; font-size: 12px; font-weight: 800; color: white; background: #2f7a55; box-shadow: 3px 3px 0 var(--ink); }
+
+/* LF Clínica — agenda com selos de status e lembrete de WhatsApp */
+.clinica-demo { min-height: 520px; display: flex; flex-direction: column; justify-content: center; gap: 18px; padding: 34px; border: 2px solid var(--ink); background: var(--cream); box-shadow: 10px 10px 0 var(--coral); }
+.clinica-card { padding: 18px; border: 2px solid var(--ink); border-radius: 18px; background: var(--paper); }
+.clinica-head { display: flex; align-items: center; gap: 12px; padding-bottom: 14px; margin-bottom: 4px; border-bottom: 1px solid #e6dccd; }
+.clinica-head > span { width: 38px; height: 38px; flex-shrink: 0; display: grid; place-items: center; border-radius: 10px; font-weight: 900; font-size: 13px; color: white; background: var(--coral); }
+.clinica-head strong { display: block; font-size: 17px; letter-spacing: -.02em; }
+.clinica-head small { font-size: 11px; color: #6f675e; }
+.clinica-slot { display: grid; grid-template-columns: 46px minmax(0, 1fr) auto; align-items: center; gap: 10px; padding: 11px 0; border-bottom: 1px solid #efe6d9; }
+.clinica-slot:last-child { border-bottom: 0; padding-bottom: 0; }
+.clinica-slot time { font: 800 12px ui-monospace, monospace; }
+.clinica-slot b { display: block; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.clinica-slot small { display: block; margin-top: 2px; font-size: 10.5px; color: #6f675e; }
+.clinica-slot em { padding: 5px 9px; border: 1px solid; border-radius: 999px; font-size: 10px; font-weight: 700; font-style: normal; white-space: nowrap; }
+.clinica-slot em.ok { color: #1f6b45; background: #e3f4e8; border-color: #9fd3b2; }
+.clinica-slot em.wait { color: #8a5a00; background: #fff4d6; border-color: #f0d38a; }
+.clinica-slot em.queue { color: #9a4421; background: #f9e3d8; border-color: #e3a98c; }
+.clinica-wpp { align-self: flex-end; width: min(310px, 100%); padding: 13px 15px; border: 1.5px solid var(--ink); border-radius: 14px; border-bottom-right-radius: 2px; background: #d9fdd3; box-shadow: 0 2px 0 #0002; }
+.clinica-wpp small { display: block; margin-bottom: 6px; font: 700 9px ui-monospace, monospace; letter-spacing: .06em; text-transform: uppercase; color: #2f6b45; }
+.clinica-wpp p { margin: 0; font-size: 13px; line-height: 1.45; }
+.clinica-wpp div { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 11px; }
+.clinica-wpp span { padding: 8px; border: 1.5px solid var(--ink); border-radius: 9px; text-align: center; font-size: 12px; font-weight: 800; background: white; }
+.clinica-wpp span:first-child { color: white; background: #2f7a55; }
+
+@media (max-width: 850px) {
+  .project-clinica .clinica-demo { order: 2; }
+}
+
+@media (max-width: 560px) {
+  .assist-demo { min-height: 430px; padding: 20px; box-shadow: 6px 6px 0 var(--blue); }
+  .clinica-demo { min-height: 430px; padding: 18px; box-shadow: 6px 6px 0 var(--coral); }
+  .clinica-card { padding: 14px; }
+  .clinica-slot { grid-template-columns: 40px minmax(0, 1fr) auto; gap: 8px; }
+  .clinica-slot em { padding: 4px 7px; font-size: 9px; }
+}
