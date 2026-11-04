@@ -87,3 +87,48 @@ export const galleryTitles: Record<GalleryId, string> = {
   revolve: "Revolve Global",
   "aroma-beans": "Aroma Beans",
 };
+
+// Legendas em inglês para a versão /en. Legenda sem tradução aparece como está.
+const captionsEn: Record<string, string> = {
+  "Today · Daily e End of Day": "Today · Daily and End of Day",
+  "Visão geral com retornos agendados": "Overview with scheduled follow-ups",
+  "Orçamentos": "Quotes",
+  "Proposta": "Proposal",
+  "Prospecção": "Lead pipeline",
+  "Tema escuro": "Dark theme",
+  "Checklists": "Checklists",
+  "Perfil, tema e backup": "Profile, theme and backup",
+  "No celular": "On mobile",
+  "Proposta no celular": "Proposal on mobile",
+  "Painel · confirmações e faltas": "Dashboard · confirmations and no-shows",
+  "Agenda por profissional": "Schedule by provider",
+  "Fila de espera": "Waitlist",
+  "Ficha do paciente": "Patient record",
+  "Tutor · Meus pets": "Pet owner · My pets",
+  "Tutor · Prontuário": "Pet owner · Medical record",
+  "Clínica · Dashboard": "Clinic · Dashboard",
+  "Clínica · Agenda": "Clinic · Schedule",
+  "Veterinário · Dashboard": "Veterinarian · Dashboard",
+  "Entrada com três perfis": "Sign-in with three profiles",
+  "Tutor · Perfil do pet": "Pet owner · Pet profile",
+  "Tutor · Agenda de consultas": "Pet owner · Appointments",
+  "Tutor · Vet-Pass e compartilhamentos": "Pet owner · Vet-Pass and sharing",
+  "Clínica · Gestão de veterinários": "Clinic · Veterinarian management",
+  "Clínica · Pets cadastrados": "Clinic · Registered pets",
+  "Veterinário · Agenda": "Veterinarian · Schedule",
+  "Tutor no celular": "Pet owner on mobile",
+  "Página inicial": "Home page",
+  "Vitrine de produtos": "Product showcase",
+  "Catálogo com filtros": "Catalog with filters",
+  "Loja no celular": "Store on mobile",
+  "Apresentação do produto": "Product overview",
+  "Como funciona": "How it works",
+  "Depoimento e novidades": "Testimonial and news",
+  "Versão para celular": "Mobile version",
+  "Conversa com o assistente": "Chat with the assistant",
+  "Assistente no celular": "Assistant on mobile",
+};
+
+export type Lang = "pt" | "en";
+
+export const captionFor = (shot: Shot, lang: Lang) => (lang === "en" ? captionsEn[shot.caption] ?? shot.caption : shot.caption);

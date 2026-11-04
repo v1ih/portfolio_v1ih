@@ -169,3 +169,14 @@
   .clinica-slot { grid-template-columns: 40px minmax(0, 1fr) auto; gap: 8px; }
   .clinica-slot em { padding: 4px 7px; font-size: 9px; }
 }
+
+.lang-switch {
+  padding: 2px 8px;
+  border: 2px solid var(--ink);
+  font-weight: 700;
+}
+
+@media (max-width: 560px) {
+  .topbar nav { gap: 9px; }
+  .lang-switch { padding: 1px 5px; }
+}

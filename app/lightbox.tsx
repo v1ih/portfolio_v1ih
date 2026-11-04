@@ -1,13 +1,16 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { galleries, galleryTitles, type GalleryId } from "./galleries";
+import { captionFor, galleries, galleryTitles, type GalleryId } from "./galleries";
 
 type Open = { id: GalleryId; index: number } | null;
 
 // Galeria em tela cheia. Intercepta cliques em qualquer link com data-gallery,
 // então as galerias continuam sendo HTML simples renderizado no servidor.
 export function Lightbox() {
+  const en = usePathname().startsWith("/en");
+  const lang = en ? "en" : "pt";
   const [open, setOpen] = useState<Open>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const returnFocus = useRef<HTMLElement | null>(null);
@@ -77,7 +80,7 @@ export function Lightbox() {
       className="lightbox"
       role="dialog"
       aria-modal="true"
-      aria-label={`Telas do ${galleryTitles[open.id]}`}
+      aria-label={en ? `${galleryTitles[open.id]} screens` : `Telas do ${galleryTitles[open.id]}`}
       onClick={(e) => e.target === e.currentTarget && close()}
       onTouchStart={(e) => (touchX.current = e.touches[0].clientX)}
       onTouchEnd={(e) => {
@@ -92,37 +95,37 @@ export function Lightbox() {
         <span className="lightbox-count" aria-live="polite">
           {count(open.index + 1)} / {count(shots.length)}
         </span>
-        <button ref={closeRef} type="button" className="lightbox-close" onClick={close} aria-label="Fechar galeria">
+        <button ref={closeRef} type="button" className="lightbox-close" onClick={close} aria-label={en ? "Close gallery" : "Fechar galeria"}>
           ×
         </button>
       </header>
 
       <div className="lightbox-stage" onClick={(e) => e.target === e.currentTarget && close()}>
         {many && (
-          <button type="button" className="lightbox-nav prev" onClick={() => go(-1)} aria-label="Tela anterior">
+          <button type="button" className="lightbox-nav prev" onClick={() => go(-1)} aria-label={en ? "Previous screen" : "Tela anterior"}>
             ←
           </button>
         )}
         <figure className={shot.mobile ? "is-mobile" : ""}>
-          <img key={shot.src} src={shot.src} alt={shot.caption} />
-          <figcaption>{shot.caption}</figcaption>
+          <img key={shot.src} src={shot.src} alt={captionFor(shot, lang)} />
+          <figcaption>{captionFor(shot, lang)}</figcaption>
         </figure>
         {many && (
-          <button type="button" className="lightbox-nav next" onClick={() => go(1)} aria-label="Próxima tela">
+          <button type="button" className="lightbox-nav next" onClick={() => go(1)} aria-label={en ? "Next screen" : "Próxima tela"}>
             →
           </button>
         )}
       </div>
 
       {many && (
-        <nav className="lightbox-thumbs" aria-label="Todas as telas">
+        <nav className="lightbox-thumbs" aria-label={en ? "All screens" : "Todas as telas"}>
           {shots.map((s, i) => (
             <button
               key={s.src}
               type="button"
               className={i === open.index ? "active" : ""}
               aria-current={i === open.index}
-              aria-label={s.caption}
+              aria-label={captionFor(s, lang)}
               onClick={() => setOpen({ id: open.id, index: i })}
             >
               <img src={s.src} alt="" loading="lazy" />

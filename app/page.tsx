@@ -8,7 +8,7 @@ export default function Home() {
     <main>
       <header className="topbar">
         <a className="wordmark" href="#inicio"><img src="/brand/lf-logo.svg" alt=""/><span><b>LAVÍNIA</b> FERRAZ</span></a>
-        <nav aria-label="Navegação principal"><a href="#projetos">Projetos</a><a href="#servicos">Serviços</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a></nav>
+        <nav aria-label="Navegação principal"><a href="#projetos">Projetos</a><a href="#servicos">Serviços</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a><a className="lang-switch" href="/en" hrefLang="en" aria-label="View this site in English">EN</a></nav>
       </header>
 
       <section className="hero" id="inicio">
