@@ -37,6 +37,10 @@ export const galleries = {
     w("lf-business", "06-celular.webp", "No celular", true),
     w("lf-business", "07-celular-proposta.webp", "Proposta no celular", true),
   ],
+  "lf-assistente": [
+    w("lf-assistente", "01-lista-do-dia.webp", "Lista do dia às 7h e aviso de quem está esperando", true),
+    w("lf-assistente", "02-como-funciona.webp", "Como funciona", true),
+  ],
   "lf-clinica": [
     w("lf-clinica", "01-painel.webp", "Painel · confirmações e faltas", true),
     w("lf-clinica", "02-agenda.webp", "Agenda por profissional", true),
@@ -81,6 +85,7 @@ export type GalleryId = keyof typeof galleries;
 export const galleryTitles: Record<GalleryId, string> = {
   "lf-workspace": "LF Workspace",
   "lf-business": "LF Business",
+  "lf-assistente": "LF Assistente",
   "lf-clinica": "LF Clínica",
   pethelp: "PetHelp",
   "mary-bless": "Mary Bless",
@@ -91,6 +96,7 @@ export const galleryTitles: Record<GalleryId, string> = {
 // Legendas em inglês para a versão /en. Legenda sem tradução aparece como está.
 const captionsEn: Record<string, string> = {
   "Today · Daily e End of Day": "Today · Daily and End of Day",
+  "Lista do dia às 7h e aviso de quem está esperando": "Daily list at 7 a.m. and waiting-customer alert",
   "Visão geral com retornos agendados": "Overview with scheduled follow-ups",
   "Orçamentos": "Quotes",
   "Proposta": "Proposal",
